@@ -3,8 +3,10 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:quizon/services/firestore.dart';
 import 'package:quizon/shared/shared.dart';
+import 'package:quizon/topics/topic_item.dart';
 
 import '../services/models.dart';
+import 'drawer.dart';
 
 class TopicsScreen extends StatelessWidget {
   const TopicsScreen({super.key});
@@ -30,6 +32,7 @@ class TopicsScreen extends StatelessWidget {
                 backgroundColor: Colors.deepPurple,
                 title: const Text('Topics'),
               ),
+              drawer: TopicDrawer(topics: topics),
               body: GridView.count(
                 primary: false,
                 padding: const EdgeInsets.all(20.0),
