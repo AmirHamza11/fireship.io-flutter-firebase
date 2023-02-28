@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:quizon/routes.dart';
 import 'package:quizon/services/firestore.dart';
 import 'package:quizon/services/models.dart';
+import 'package:quizon/shared/loading.dart';
 import 'package:quizon/theme.dart';
 
 void main() {
@@ -56,7 +57,9 @@ class _AppState extends State<App> {
 
         // Otherwise, show something whilst waiting for initialization to complete
 
-        return const Text("hello");
+        return const MaterialApp(
+          home: LoadingScreen(),
+        );
       },
     );
   }
